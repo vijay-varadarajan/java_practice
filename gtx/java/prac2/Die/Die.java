@@ -23,10 +23,4 @@ public class Die{
     public String toString(){
         return ("Die has face value of: " + faceValue);
     }
-
-    public static void main(String[] args){
-        Die die1 = new Die();
-        System.out.println(die1.toString());
-        System.out.println(die1.roll());
-    }
 }
