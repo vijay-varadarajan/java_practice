@@ -1,6 +1,11 @@
 public class Insect{
 
-    // static instance constants
+    // public static instance constants
+    public static final float DEFAULT_WEIGHT = 15;
+    public static final int DEFAULT_X = 0;
+    public static final int DEFAULT_Y = 0;
+
+    // private static instance constants
     private static final double DIST_WEIGHT_LOSS_FACTOR = .0001;
     private static final String[] FACTS = {
         "The two main types of insects are winged and wingless",
@@ -17,14 +22,35 @@ public class Insect{
     private int x;
     private int y;
 
-    // constructor
+    // Overloaded constructor
+    public Insect(){
+        // Chaining with more specific constructor using this() to avoid repeating code
+        this(DEFAULT_WEIGHT);
+    }
+
+    // Multiple chaining levels
+    public Insect(double initWeight){
+        this(initWeight, DEFAULT_X, DEFAULT_Y);
+    }
+
+    // constructor using this as reference
+    public Insect(double weight, int x, int y){
+        this.weight = weight;
+        this.x = x;
+        this.y = y;
+        population++;
+    }
+
+    // constructor using init parameters
+    /*
     public Insect(double initWeight, int initx, int inity){
         weight = initWeight;
         x = initx;
         y = inity;
         population++;
     }
-
+    */
+    
     // Getter or accessor methods 
     public double getWeight(){
         return weight;
@@ -38,27 +64,32 @@ public class Insect{
         return y;
     }
 
+    public static int getPopulation(){
+        return population;
+    }
+
+
     // Setter or mutator methods
-    public void setX(int newX){
-        if (isLegalX(newX)){
-            x = newX;
+    public void setX(int x){
+        if (isLegalX(x)){
+            this.x = x;
         }
     }
     
-    public void setY(int newX){
-        if (isLegalX(newY)){
-            y = newY;
+    public void setY(int y){
+        if (isLegalX(y)){
+            this.y = y;
         }
     }
 
     // Check if new x value is legal
     public static boolean isLegalX(int newX){
-        return (newX >= 0 ? true : false)
+        return (newX >= 0 ? true : false);
     }
 
     // Check if new y value is legal
     public static boolean isLegalY(int newY){
-        return (newY >= 0 ? true : false)
+        return (newY >= 0 ? true : false);
     }
 
     // method - eat
@@ -88,6 +119,11 @@ public class Insect{
     public static String randomFact(){
         int index = (int)(Math.random() * ((FACTS.length - 1) + 1));
         return FACTS[index];
+    }
+
+    // Overriding default toString method
+    public String toString(){
+        return ("Weight: " + weight + ", (x, y): " + x + ", " + y);
     }
 
     // main
