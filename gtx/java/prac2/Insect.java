@@ -38,6 +38,29 @@ public class Insect{
         return y;
     }
 
+    // Setter or mutator methods
+    public void setX(int newX){
+        if (isLegalX(newX)){
+            x = newX;
+        }
+    }
+    
+    public void setY(int newX){
+        if (isLegalX(newY)){
+            y = newY;
+        }
+    }
+
+    // Check if new x value is legal
+    public static boolean isLegalX(int newX){
+        return (newX >= 0 ? true : false)
+    }
+
+    // Check if new y value is legal
+    public static boolean isLegalY(int newY){
+        return (newY >= 0 ? true : false)
+    }
+
     // method - eat
     public void eat(double amount){
         System.out.println("Nibble nibble");
