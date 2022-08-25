@@ -25,6 +25,19 @@ public class Insect{
         population++;
     }
 
+    // Getter or accessor methods 
+    public double getWeight(){
+        return weight;
+    }
+
+    public int getX(){
+        return x;
+    }
+
+    public int getY(){
+        return y;
+    }
+
     // method - eat
     public void eat(double amount){
         System.out.println("Nibble nibble");
