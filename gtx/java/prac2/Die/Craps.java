@@ -3,17 +3,20 @@ public class Craps{
     private Die die1, die2;
     private int point;
 
+    // constructor
     public Craps(){
         die1 = new Die();
         die2 = new Die();
     }
 
+    // method - toss
     private int toss(){
         int total = die1.roll() + die2.roll();
         System.out.println("Die 1: " + die1.getFaceValue() + "   Die 2: " + die2.getFaceValue());
         return total;
     }
 
+    // method - go : to begin game
     public void go(){
         
         System.out.println("Stage 1: ");
@@ -31,6 +34,7 @@ public class Craps{
         }
     }
 
+    // defining stage 2 of game
     private void stage2(){
         boolean endGame = false;
 
