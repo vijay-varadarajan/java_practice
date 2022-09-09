@@ -17,7 +17,7 @@ public class Wolf extends Canine {
     }
 
     public void groom() {
-        System.out.println("lick");
+        System.out.println("lick lick");
     }
 
     public static void main(String[] args) {
