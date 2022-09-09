@@ -16,6 +16,10 @@ public class Wolf extends Canine {
         }
     }
 
+    public void groom() {
+        System.out.println("lick");
+    }
+
     public static void main(String[] args) {
         Wolf alpha = new Wolf(17.1, 2);
         alpha.bark();
